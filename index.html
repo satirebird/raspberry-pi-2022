@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Raspberry Pi</h2>
+					<p></p>
+					<h3>Lerne die Programmierung eines Mikrocomputers kennen</h3>
+					<p>
+					<small>Sven Krauß</small>
+					</p>
+				</section>
+				<section>
+					<h2>Termine</h2>
+					<ul>
+						<li>KW04 > 26.01.2022</li>
+						<li>KW05 > 02.02.2022</li>
+						<li>KW06 > 09.02.2022</li>
+						<li>KW07 > 16.02.2022</li>
+						<li>KW08 > 23.02.2022</li>
+						<li>KW09 > Entfällt wg Ferien</li>
+						<li>KW10 > 09.03.2022</li>
+					</ul>
+					<!--img src="logo.svg" width="200"-->
+				</section>
+				<section>
+					<h2>Themenübersicht</h2>
+					<ol>
+						<li>Was ist ein Raspberry Pi?<br><small>Einführung und den Raspberry Einrichten</small></li>
+						<li>Einführung in Python<br><small>print("Hallo Welt")</small></li>
+						<li>Arbeiten mit den GPIOs<br><small>LEDs und Taster</small></li>
+						<li>Sensoren einlesen</li>
+						<li>Weitere Themen</li>
+						<ul>
+							<small>
+								<li>Raspberry Pi im Netzwerk</li>
+								<li>Sonic Pi</li>
+								<li>Türklingel</li>
+							</small>
+						</ul>
+					</ol>
+				</section>
+				<section>
+					<h2>Installation</h2>
+					<img src="images/Installer.png"/>
+				</section>
+				<section>
+					<h2>Was ist der Raspberry Pi</h2>
+					<ul>
+						<li>Komponenten des Pi</li>
+						<li>Anschlüsse</li>
+						<li>Umgang mit dem Pi - Was ist ESD?</li>
+						<li>Betriebssystem</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Linux und das Linux File System</h2>
+					<ul>
+						<li>Root ... </li>
+					</ul>
+				</section>
+
+				<section>
+					<pre><code data-trim data-line-numbers>
+						print("Hallo Welt")
+					</code></pre>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
