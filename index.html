@@ -50,13 +50,10 @@
 								<li>Raspberry Pi im Netzwerk</li>
 								<li>Sonic Pi</li>
 								<li>Türklingel</li>
+								<li>Eure Vorschläge</li>
 							</small>
 						</ul>
 					</ol>
-				</section>
-				<section>
-					<h2>Installation</h2>
-					<img src="images/Installer.png"/>
 				</section>
 				<section>
 					<h2>Was ist der Raspberry Pi</h2>
@@ -67,19 +64,137 @@
 						<li>Betriebssystem</li>
 					</ul>
 				</section>
-
 				<section>
-					<h2>Linux und das Linux File System</h2>
+					<h2>Hardware</h2>
+					<img src="images/Hardware.png"/>
+				</section>
+				<section>
+					<h2>Einige Anwendungen</h2>
 					<ul>
-						<li>Root ... </li>
-					</ul>
+						<li>Desktop-Computer</li>
+						<li>Internetradio</li>
+						<li>Überwachungskamera / Webcam</li>
+						<li>Robotersteuerung</li>
+						<li>IoT / Hausautomation</li>
+						<li>Web-Server</li>
+						<li>Datenlogger</li>
+						<li>Kiosk-Modus</li>
+						<li>Retro-Spiele</li>
+						<li>...</li>
+					</ul>					
+				</section>
+				<section>
+					<h2>Installation</h2>
+					<img src="images/Installer.png"/>
 				</section>
 
 				<section>
+					<h2>Aufbau und Start</h2>
+					<blockquote>
+						Aufgabe: Systemupdate
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Die Sprache der Computer</h2>
 					<pre><code data-trim data-line-numbers>
-						print("Hallo Welt")
+						0000000 49a1 75c3 7ff0 0ebe 798c e71a d095 a2f3
+						0000010 65bb e654 9fbe 3b33 a1a2 8fe6 91a5 1c61
+						0000020 4487 b7f2 9ba1 9858 2960 d9b6 6a88 af86
+						0000030 85cf 725c b7cb a4ca ddb7 cee7 cbe7 fd69
+						0000040 6988 0dac e990 ecd5 1346 1fe0 ab97 13dd
+						0000050 a0f4 0313 c5da 7fae 3f9b ca04 68f5 71b0
+						0000060 a9eb 3d14 8258 64ea 8836 7e7f d051 fe64
+						0000070 60d7 9712 cbaf ccf7 35ae 072c 084a fffd
+						0000080 5b3e 9d93 cdcc 7365 aeb9 3ead f26c 7e23
+						0000090 38c6 d64d 7625 1daa 5070 6297 9de2 9ea5
 					</code></pre>
 				</section>
+
+				<section>
+					<h2>Die Sprache der Computer</h2>
+					<pre><code data-trim data-line-numbers>
+						801059c <__adddf3>:
+						801059c:	b530      	push	{r4, r5, lr}
+						801059e:	ea4f 0441 	mov.w	r4, r1, lsl #1
+						80105a2:	ea4f 0543 	mov.w	r5, r3, lsl #1
+						80105a6:	ea94 0f05 	teq	r4, r5
+						80105aa:	bf08      	it	eq
+						80105ac:	ea90 0f02 	teqeq	r0, r2
+						80105b0:	bf1f      	itttt	ne
+						80105b2:	ea54 0c00 	orrsne.w	ip, r4, r0
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Einführung in Python</h2>
+					<pre><code data-trim data-line-numbers>
+						print("Hallo Welt")
+						ida = 5
+						ida
+						paul = 42
+						paul						
+						print("Ida ist", ida)
+						print("Paul ist", paul)
+						print("Zusammen sind sie", (paul + ida))
+						ida=paul
+						print("Zusammen sind sie", (paul + ida))
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Entwicklungsumgebung</h2>
+					<p>Demo</p>
+				</section>
+
+				<section>
+					<h2>Quadrierer</h2>
+					<pre><code data-trim data-line-numbers>
+						zahl = input("Gib eine Zahl ein: ")
+						quadrat = zahl*zahl
+						print("Das Quadrat ist:", quadrat)
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Datentypen</h2>
+					<p>(Im Interpreter)</p>
+					<pre><code data-trim data-line-numbers>
+						var = -5
+						print(type(var))
+
+						var = 5.0
+						print(type(var))
+
+						var = "Hallo Welt"
+						print(type(var))
+
+						var = "55"
+						print(type(var))
+
+						var = int(var)
+						print(type(var))
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Schleifen</h2>
+					<pre><code data-trim data-line-numbers>
+						for i in range(1,5):
+							print("Zähler:", i)
+					</code>
+				</section>
+
+				<section>
+					<h2>Schleifen und Bedingungen</h2>
+					<pre><code data-trim data-line-numbers>
+						for i in range(1,50):
+							print("Zähler:", i)
+							if i == 15:
+								break								
+					</code>
+				</section>
+
 			</div>
 		</div>
 
