@@ -161,40 +161,220 @@
 					<p>(Im Interpreter)</p>
 					<pre><code data-trim data-line-numbers>
 						var = -5
-						print(type(var))
+						type(var)
 
 						var = 5.0
-						print(type(var))
+						type(var)
 
 						var = "Hallo Welt"
-						print(type(var))
+						type(var)
 
 						var = "55"
-						print(type(var))
+						type(var)
 
 						var = int(var)
-						print(type(var))
+						type(var)
 					</code></pre>
 				</section>
 
 				<section>
-					<h2>Schleifen</h2>
-					<pre><code data-trim data-line-numbers>
-						for i in range(1,5):
-							print("Zähler:", i)
-					</code>
+					<h2>Verzweigungen</h2>
+						<pre><code class="py" data-trim data-line-numbers>
+							if [Bedingung]:
+								[Anweisung]
+								...
+							elif:
+								[Anweisung]
+								...
+							else:
+								[Anweisung]
+								...
+						</code></pre>
+						<p>
+							Bedingungen können sein:
+						</p>
+						<ul>
+							<li>Kleiner: a &lt; b</li>
+							<li>Größer: a &gt; b</li>
+							<li>Kleiner gleich: a &lt;= b</li>
+							<li>Größer gleich: a &gt;= b</li>
+							<li>Gleich a == b</li>
+						</ul>
 				</section>
 
 				<section>
-					<h2>Schleifen und Bedingungen</h2>
-					<pre><code data-trim data-line-numbers>
-						for i in range(1,50):
-							print("Zähler:", i)
-							if i == 15:
-								break								
-					</code>
+					<h2>Verzweigungen - Beispiel</h2>
+						<pre><code class="py" data-trim data-line-numbers>
+							alter = int(input("Wie alt bist du? "))
+							if alter < 10:
+								print("Kind")
+							elif alter < 18:
+								print("Jugendlich")
+							else:
+								print("Erwachsen")
+						</code></pre>
 				</section>
 
+				<section>
+					<h2>While-Schleifen</h2>
+					<pre><code class="py" data-trim data-line-numbers>
+						while Bedingung:
+							Anweisung
+							...
+							break
+					</code></pre>
+					<p>Zahlenraten</p>
+					<pre><code class="py" data-trim data-line-numbers>
+						from random import randint
+
+						print("Rate eine Zahl zwischen 1 und 100")
+						zufallszahl = randint(1,100)
+						zahl = int(input("Dein Vorschlag: "))
+
+						while zahl != zufallszahl:
+							if zahl < zufallszahl:
+								print("Zu klein")
+							else:
+								print("Zu groß")
+							zahl = int(input("Dein Vorschlag: "))
+
+						print("Richtig!")
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>For-Schleifen</h2>
+					<pre><code class="py" data-trim data-line-numbers>
+						for X in I:
+							Anweisung
+							...
+							break
+					</code></pre>
+					<p>Beispiel Fakultät</p>
+					<pre><code class="py" data-trim data-line-numbers>
+						fak = 1
+						for i in range(1,10):
+							fak = fak * i
+						print("Fakultät von:", i, "ist", fak)
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Bibliotheken einbinden</h2>
+					<ul>
+						<li>Die meisten Probleme in der Softwareentwicklung wurden schon von 
+							anderen bearbeitet.</li>
+						<li>Teile der Problemlösung können in Bibliotheken bereitgestellt werden.</li>
+						<li>Das Rad muss nicht neu erfunden werden.</li>
+					</ul>
+					<pre><code class="py" data-trim data-line-numbers>
+						import random
+
+						zufallszahl = random.randint(1,100)
+					</code></pre>
+					<pre><code class="py" data-trim data-line-numbers>
+						import math
+
+						s = math.sin(0.5)
+					</code></pre>
+					<p><a href="https://docs.python.org/3/library/index.html">Python Standard Bibliothek</a></p>
+					<p><a href="https://pypi.org/">Python Package Index</a></p>
+				</section>
+
+				<section>
+					<h2>General Purpose Input/Output</h2>
+					<img src="images/Display.png"/>
+				</section>
+
+				<section>
+					<h2>GPIO Pins (Layout)</h2>
+					<img src="images/Pins.png" height="500"/>
+					<img src="images/GPIOs.png" height="500"/>					
+				</section>
+
+				<section>
+					<h2>GPIO mit Python ansteuern</h2>
+					<ul>
+						<li>Es gibt zwei verschiedene Modi für die Identifizierung
+							<ol>
+								<li class="fragment highlight-current-green">Die BOARD-Methode verwendet die Nummern 1 bis 40 entsprechend dem Layout.</li>
+								<li class="fragment highlight-current-green">Die BCM-Methode bezeichnet die Pins entsprechend ihres Interface-Kanals (channel).</li>
+							</ol>
+						</li>
+						<li class="fragment highlight-current-green">Einige GPIO-Anschlüsse können mehrere Funktionen übernehmen (SPI, I2C, USB...)</li>
+						<li class="fragment highlight-current-green">Achtung: Ein GPIO-Ausgang darf mit maximale 16mA belastet werden.</li>
+						<li class="fragment highlight-current-green">Alles GPIOs funktionieren mit 3.3V</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>GPIO mit Python ansteuern 2</h2>
+					<ul>
+						<li>Die 'RPi'-Bibliothek erlaubt den Ansteuerung der GPIO-Anschlüsse</li>
+					</ul>
+					<pre><code class="py" data-trim data-line-numbers>
+						import RPi.GPIO as GPIO
+
+						GPIO.setmode(GPIO.BCM)
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Aufbau mit Breadboard</h2>
+					<img src="images/Verdrahtung1.png" height="500"/>
+				</section>
+
+				<section>
+					<h2>Aufbau mit Breadboard</h2>
+					<img src="images/Verdrahtung2.png" height="500"/>
+				</section>
+
+				<section>
+					<h2>Aufbau mit Breadboard</h2>
+					<img src="images/Verdrahtung3.png" height="500"/>
+				</section>
+
+				<section>
+					<h2>Blinkende Leuchtdiode</h2>					
+					<ul>
+						<li>LEDs können nur mit einem Vorwiderstand an den GPIOs angeschlossen werden. 
+						In dem Fall 150 Ohm.</li>
+						<li>Die Polarität muss beachtet werden. Der kurze Anschluss	kennzeichnet die 
+							Anode und muss mit der positiven Seite der Spannungsversorgung verbunden 
+							werden.	Der lange Anschluss ist die Kathode und gehört an die negative 
+							Seite (hier Ground GND).</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Blinkende Leuchtdiode</h2>
+					<img src="images/LED1.png" height="500"/>
+				</section>
+				<section>
+					<h2>Blinkende Leuchtdiode</h2>
+					<pre><code class="py" data-trim data-line-numbers>
+						import time
+						import RPi.GPIO as GPIO
+						
+						led_pin = 18
+						
+						GPIO.setmode(GPIO.BCM)
+						GPIO.setup(led_pin, GPIO.OUT)
+						
+						try:
+							while True:
+								GPIO.output(led_pin, GPIO.HIGH)
+								time.sleep(0.5)
+								GPIO.output(led_pin, GPIO.LOW)
+								time.sleep(0.5)
+						except KeyboardInterrupt:
+							pass
+						
+						GPIO.cleanup()
+					</code></pre>
+				</section>
+
+
+				<!-- https://pimylifeup.com/raspberry-pi-gpio/ -->
 			</div>
 		</div>
 
