@@ -373,6 +373,61 @@
 					</code></pre>
 				</section>
 
+				<!-- https://indibit.de/raspberry-pi-gpio-ausgaenge-schalten-eingaenge-lesen/ -->
+				<section>
+					<h2>Taster abfragen</h2>
+					<ul>
+						<li>Kann verwendet werden um den Zustand eines elektrischen Kontakts zu erfassen</li>
+						<li>z.B. Lichtschranken, Türkontakte, Taster, etc...</li>
+						<li>Pull-Up oder Pull-Down beachten <a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm">(Klick)</a></li>						
+						<li>Die Pull-Up / Pull-Down Widersände sind in der CPU bereits eingebaut und können über die Bibliothek
+							aktiviert werden.
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Taster abfragen</h2>
+					<img src="images/Pullup.png" height="500"/>
+				</section>
+
+				<section>
+					<h2>Taster abfragen</h2>
+					<img src="images/Taster1.jpeg" height="500"/>
+				</section>
+
+				<section>
+					<h2>Taster abfragen</h2>
+					<pre><code class="py" data-trim data-line-numbers>
+						import time
+						import RPi.GPIO as GPIO
+						
+						tast_pin = 17
+						
+						GPIO.setmode(GPIO.BCM)
+						GPIO.setup(tast_pin, GPIO.IN, pull_up_down = GPIO.PUD_UP)
+						try:
+							while True:
+								time.sleep(0.5)
+								if GPIO.input(tast_pin) == GPIO.HIGH:
+									print "Taster (nicht) gedrückt"
+								else:
+									print "Taster (nicht) gedrückt"
+							
+						except KeyboardInterrupt:
+							pass
+						
+						GPIO.cleanup()
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Taster abfragen</h2>
+					<p>Aufgabe: Ändere das Programm so ab, dass nur die Ereignisse "Taste gedrückt" 
+						und "Taste losgelassen" ausgegeben werden.
+					</p>
+				</section>
+
 
 				<!-- https://pimylifeup.com/raspberry-pi-gpio/ -->
 			</div>
