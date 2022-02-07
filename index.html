@@ -38,7 +38,7 @@
 					<!--img src="logo.svg" width="200"-->
 				</section>
 				<section>
-					<h2>Themenübersicht</h2>
+					<h3>Themenübersicht</h3>
 					<ol>
 						<li>Was ist ein Raspberry Pi?<br><small>Einführung und den Raspberry Einrichten</small></li>
 						<li>Einführung in Python<br><small>print("Hallo Welt")</small></li>
@@ -56,380 +56,543 @@
 					</ol>
 				</section>
 				<section>
-					<h2>Was ist der Raspberry Pi</h2>
-					<ul>
-						<li>Komponenten des Pi</li>
-						<li>Anschlüsse</li>
-						<li>Umgang mit dem Pi - Was ist ESD?</li>
-						<li>Betriebssystem</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Hardware</h2>
-					<img src="images/Hardware.png"/>
-				</section>
-				<section>
-					<h2>Einige Anwendungen</h2>
-					<ul>
-						<li>Desktop-Computer</li>
-						<li>Internetradio</li>
-						<li>Überwachungskamera / Webcam</li>
-						<li>Robotersteuerung</li>
-						<li>IoT / Hausautomation</li>
-						<li>Web-Server</li>
-						<li>Datenlogger</li>
-						<li>Kiosk-Modus</li>
-						<li>Retro-Spiele</li>
-						<li>...</li>
-					</ul>					
-				</section>
-				<section>
-					<h2>Installation</h2>
-					<img src="images/Installer.png"/>
-				</section>
-
-				<section>
-					<h2>Aufbau und Start</h2>
-					<blockquote>
-						Aufgabe: Systemupdate
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Die Sprache der Computer</h2>
-					<pre><code data-trim data-line-numbers>
-						0000000 49a1 75c3 7ff0 0ebe 798c e71a d095 a2f3
-						0000010 65bb e654 9fbe 3b33 a1a2 8fe6 91a5 1c61
-						0000020 4487 b7f2 9ba1 9858 2960 d9b6 6a88 af86
-						0000030 85cf 725c b7cb a4ca ddb7 cee7 cbe7 fd69
-						0000040 6988 0dac e990 ecd5 1346 1fe0 ab97 13dd
-						0000050 a0f4 0313 c5da 7fae 3f9b ca04 68f5 71b0
-						0000060 a9eb 3d14 8258 64ea 8836 7e7f d051 fe64
-						0000070 60d7 9712 cbaf ccf7 35ae 072c 084a fffd
-						0000080 5b3e 9d93 cdcc 7365 aeb9 3ead f26c 7e23
-						0000090 38c6 d64d 7625 1daa 5070 6297 9de2 9ea5
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Die Sprache der Computer</h2>
-					<pre><code data-trim data-line-numbers>
-						801059c <__adddf3>:
-						801059c:	b530      	push	{r4, r5, lr}
-						801059e:	ea4f 0441 	mov.w	r4, r1, lsl #1
-						80105a2:	ea4f 0543 	mov.w	r5, r3, lsl #1
-						80105a6:	ea94 0f05 	teq	r4, r5
-						80105aa:	bf08      	it	eq
-						80105ac:	ea90 0f02 	teqeq	r0, r2
-						80105b0:	bf1f      	itttt	ne
-						80105b2:	ea54 0c00 	orrsne.w	ip, r4, r0
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Einführung in Python</h2>
-					<pre><code data-trim data-line-numbers>
-						print("Hallo Welt")
-						ida = 5
-						ida
-						paul = 42
-						paul						
-						print("Ida ist", ida)
-						print("Paul ist", paul)
-						print("Zusammen sind sie", (paul + ida))
-						ida=paul
-						print("Zusammen sind sie", (paul + ida))
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Entwicklungsumgebung</h2>
-					<p>Demo</p>
-				</section>
-
-				<section>
-					<h2>Quadrierer</h2>
-					<pre><code data-trim data-line-numbers>
-						zahl = input("Gib eine Zahl ein: ")
-						quadrat = zahl*zahl
-						print("Das Quadrat ist:", quadrat)
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Datentypen</h2>
-					<p>(Im Interpreter)</p>
-					<pre><code data-trim data-line-numbers>
-						var = -5
-						type(var)
-
-						var = 5.0
-						type(var)
-
-						var = "Hallo Welt"
-						type(var)
-
-						var = "55"
-						type(var)
-
-						var = int(var)
-						type(var)
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Verzweigungen</h2>
-						<pre><code class="py" data-trim data-line-numbers>
-							if [Bedingung]:
-								[Anweisung]
-								...
-							elif:
-								[Anweisung]
-								...
-							else:
-								[Anweisung]
-								...
-						</code></pre>
-						<p>
-							Bedingungen können sein:
-						</p>
+					<section>
+						<h2>Was ist der Raspberry Pi</h2>
 						<ul>
-							<li>Kleiner: a &lt; b</li>
-							<li>Größer: a &gt; b</li>
-							<li>Kleiner gleich: a &lt;= b</li>
-							<li>Größer gleich: a &gt;= b</li>
-							<li>Gleich a == b</li>
+							<li>Komponenten des Pi</li>
+							<li>Anschlüsse</li>
+							<li>Umgang mit dem Pi - Was ist ESD?</li>
+							<li>Betriebssystem</li>
 						</ul>
-				</section>
+					</section>
+					<section>
+						<h3>Hardware</h3>
+						<img src="images/Hardware.png"/>
+					</section>
+					<section>
+						<h3>Einige Anwendungen</h3>
+						<ul>
+							<li>Desktop-Computer</li>
+							<li>Internetradio</li>
+							<li>Überwachungskamera / Webcam</li>
+							<li>Robotersteuerung</li>
+							<li>IoT / Hausautomation</li>
+							<li>Web-Server</li>
+							<li>Datenlogger</li>
+							<li>Kiosk-Modus</li>
+							<li>Retro-Spiele</li>
+							<li>...</li>
+						</ul>					
+					</section>
+					<section>
+						<h3>Installation</h3>
+						<img src="images/Installer.png"/>
+					</section>
 
-				<section>
-					<h2>Verzweigungen - Beispiel</h2>
-						<pre><code class="py" data-trim data-line-numbers>
-							alter = int(input("Wie alt bist du? "))
-							if alter < 10:
-								print("Kind")
-							elif alter < 18:
-								print("Jugendlich")
-							else:
-								print("Erwachsen")
+					<section>
+						<h3>Aufbau und Start</h3>
+						<blockquote>
+							Aufgabe: Systemupdate
+						</blockquote>
+					</section>
+
+					<section>
+						<h3>Die Sprache der Computer</h3>
+						<pre><code data-trim data-line-numbers>
+							0000000 49a1 75c3 7ff0 0ebe 798c e71a d095 a2f3
+							0000010 65bb e654 9fbe 3b33 a1a2 8fe6 91a5 1c61
+							0000020 4487 b7f2 9ba1 9858 2960 d9b6 6a88 af86
+							0000030 85cf 725c b7cb a4ca ddb7 cee7 cbe7 fd69
+							0000040 6988 0dac e990 ecd5 1346 1fe0 ab97 13dd
+							0000050 a0f4 0313 c5da 7fae 3f9b ca04 68f5 71b0
+							0000060 a9eb 3d14 8258 64ea 8836 7e7f d051 fe64
+							0000070 60d7 9712 cbaf ccf7 35ae 072c 084a fffd
+							0000080 5b3e 9d93 cdcc 7365 aeb9 3ead f26c 7e23
+							0000090 38c6 d64d 7625 1daa 5070 6297 9de2 9ea5
 						</code></pre>
+					</section>
+
+					<section>
+						<h3>Die Sprache der Computer</h3>
+						<pre><code data-trim data-line-numbers>
+							801059c <__adddf3>:
+							801059c:	b530      	push	{r4, r5, lr}
+							801059e:	ea4f 0441 	mov.w	r4, r1, lsl #1
+							80105a2:	ea4f 0543 	mov.w	r5, r3, lsl #1
+							80105a6:	ea94 0f05 	teq	r4, r5
+							80105aa:	bf08      	it	eq
+							80105ac:	ea90 0f02 	teqeq	r0, r2
+							80105b0:	bf1f      	itttt	ne
+							80105b2:	ea54 0c00 	orrsne.w	ip, r4, r0
+						</code></pre>
+					</section>
 				</section>
 
 				<section>
-					<h2>While-Schleifen</h2>
-					<pre><code class="py" data-trim data-line-numbers>
-						while Bedingung:
-							Anweisung
-							...
-							break
-					</code></pre>
-					<p>Zahlenraten</p>
-					<pre><code class="py" data-trim data-line-numbers>
-						from random import randint
+					<section>
+						<h2>Einführung in Python</h2>
+						<pre><code data-trim data-line-numbers>
+							print("Hallo Welt")
+							ida = 5
+							ida
+							paul = 42
+							paul						
+							print("Ida ist", ida)
+							print("Paul ist", paul)
+							print("Zusammen sind sie", (paul + ida))
+							ida=paul
+							print("Zusammen sind sie", (paul + ida))
+						</code></pre>
+					</section>
 
-						print("Rate eine Zahl zwischen 1 und 100")
-						zufallszahl = randint(1,100)
-						zahl = int(input("Dein Vorschlag: "))
+					<section>
+						<h3>Entwicklungsumgebung</h3>
+						<p>Demo</p>
+					</section>
 
-						while zahl != zufallszahl:
-							if zahl < zufallszahl:
-								print("Zu klein")
-							else:
-								print("Zu groß")
+					<section>
+						<h3>Quadrierer</h3>
+						<pre><code data-trim data-line-numbers>
+							zahl = input("Gib eine Zahl ein: ")
+							quadrat = zahl*zahl
+							print("Das Quadrat ist:", quadrat)
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Datentypen</h3>
+						<p>(Im Interpreter)</p>
+						<pre><code data-trim data-line-numbers>
+							var = -5
+							type(var)
+
+							var = 5.0
+							type(var)
+
+							var = "Hallo Welt"
+							type(var)
+
+							var = "55"
+							type(var)
+
+							var = int(var)
+							type(var)
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Verzweigungen</h3>
+							<pre><code class="py" data-trim data-line-numbers>
+								if [Bedingung]:
+									[Anweisung]
+									...
+								elif:
+									[Anweisung]
+									...
+								else:
+									[Anweisung]
+									...
+							</code></pre>
+							<p>
+								Bedingungen können sein:
+							</p>
+							<ul>
+								<li>Kleiner: a &lt; b</li>
+								<li>Größer: a &gt; b</li>
+								<li>Kleiner gleich: a &lt;= b</li>
+								<li>Größer gleich: a &gt;= b</li>
+								<li>Gleich a == b</li>
+							</ul>
+					</section>
+
+					<section>
+						<h3>Verzweigungen - Beispiel</h3>
+							<pre><code class="py" data-trim data-line-numbers>
+								alter = int(input("Wie alt bist du? "))
+								if alter < 10:
+									print("Kind")
+								elif alter < 18:
+									print("Jugendlich")
+								else:
+									print("Erwachsen")
+							</code></pre>
+					</section>
+
+					<section>
+						<h3>While-Schleifen</h3>
+						<pre><code class="py" data-trim data-line-numbers>
+							while Bedingung:
+								Anweisung
+								...
+								break
+						</code></pre>
+						<p>Zahlenraten</p>
+						<pre><code class="py" data-trim data-line-numbers>
+							from random import randint
+
+							print("Rate eine Zahl zwischen 1 und 100")
+							zufallszahl = randint(1,100)
 							zahl = int(input("Dein Vorschlag: "))
 
-						print("Richtig!")
-					</code></pre>
+							while zahl != zufallszahl:
+								if zahl < zufallszahl:
+									print("Zu klein")
+								else:
+									print("Zu groß")
+								zahl = int(input("Dein Vorschlag: "))
+
+							print("Richtig!")
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>For-Schleifen</h3>
+						<pre><code class="py" data-trim data-line-numbers>
+							for X in I:
+								Anweisung
+								...
+								break
+						</code></pre>
+						<p>Beispiel Fakultät</p>
+						<pre><code class="py" data-trim data-line-numbers>
+							fak = 1
+							for i in range(1,10):
+								fak = fak * i
+							print("Fakultät von:", i, "ist", fak)
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Bibliotheken einbinden</h3>
+						<ul>
+							<li>Die meisten Probleme in der Softwareentwicklung wurden schon von 
+								anderen bearbeitet.</li>
+							<li>Teile der Problemlösung können in Bibliotheken bereitgestellt werden.</li>
+							<li>Das Rad muss nicht neu erfunden werden.</li>
+						</ul>
+						<pre><code class="py" data-trim data-line-numbers>
+							import random
+							import math
+
+							zufallszahl = random.randint(1,100)
+							s = math.sin(0.5)
+						</code></pre>
+						<p><a href="https://docs.python.org/3/library/index.html">Python Standard Bibliothek</a></p>
+						<p><a href="https://pypi.org/">Python Package Index</a></p>
+					</section>
 				</section>
 
 				<section>
-					<h2>For-Schleifen</h2>
-					<pre><code class="py" data-trim data-line-numbers>
-						for X in I:
-							Anweisung
-							...
-							break
-					</code></pre>
-					<p>Beispiel Fakultät</p>
-					<pre><code class="py" data-trim data-line-numbers>
-						fak = 1
-						for i in range(1,10):
-							fak = fak * i
-						print("Fakultät von:", i, "ist", fak)
-					</code></pre>
+					<!-- https://pimylifeup.com/raspberry-pi-gpio/ -->
+					<section>
+						<h2>General Purpose Input/Output</h2>
+						<img src="images/Display.png"/>
+					</section>
+
+					<section>
+						<h3>GPIO Pins (Layout)</h3>
+						<img src="images/Pins.png" height="500"/>
+						<img src="images/GPIOs.png" height="500"/>					
+					</section>
+
+					<section>
+						<h3>GPIO mit Python ansteuern</h3>
+						<ul>
+							<li>Es gibt zwei verschiedene Modi für die Identifizierung
+								<ol>
+									<li class="fragment highlight-current-green">Die BOARD-Methode verwendet die Nummern 1 bis 40 entsprechend dem Layout.</li>
+									<li class="fragment highlight-current-green">Die BCM-Methode bezeichnet die Pins entsprechend ihres Interface-Kanals (channel).</li>
+								</ol>
+							</li>
+							<li class="fragment highlight-current-green">Einige GPIO-Anschlüsse können mehrere Funktionen übernehmen (SPI, I2C, USB...)</li>
+							<li class="fragment highlight-current-green">Achtung: Ein GPIO-Ausgang darf mit maximale 16mA belastet werden.</li>
+							<li class="fragment highlight-current-green">Alles GPIOs funktionieren mit 3.3V</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>GPIO mit Python ansteuern 2</h3>
+						<ul>
+							<li>Die 'RPi'-Bibliothek erlaubt den Ansteuerung der GPIO-Anschlüsse</li>
+						</ul>
+						<pre><code class="py" data-trim data-line-numbers>
+							import RPi.GPIO as GPIO
+
+							GPIO.setmode(GPIO.BCM)
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Aufbau mit Breadboard</h3>
+						<img src="images/Verdrahtung1.png" height="500"/>
+					</section>
+
+					<section>
+						<h3>Aufbau mit Breadboard</h3>
+						<img src="images/Verdrahtung2.png" height="500"/>
+					</section>
+
+					<section>
+						<h3>Aufbau mit Breadboard</h3>
+						<img src="images/Verdrahtung3.png" height="500"/>
+					</section>
 				</section>
 
 				<section>
-					<h2>Bibliotheken einbinden</h2>
-					<ul>
-						<li>Die meisten Probleme in der Softwareentwicklung wurden schon von 
-							anderen bearbeitet.</li>
-						<li>Teile der Problemlösung können in Bibliotheken bereitgestellt werden.</li>
-						<li>Das Rad muss nicht neu erfunden werden.</li>
-					</ul>
-					<pre><code class="py" data-trim data-line-numbers>
-						import random
-
-						zufallszahl = random.randint(1,100)
-					</code></pre>
-					<pre><code class="py" data-trim data-line-numbers>
-						import math
-
-						s = math.sin(0.5)
-					</code></pre>
-					<p><a href="https://docs.python.org/3/library/index.html">Python Standard Bibliothek</a></p>
-					<p><a href="https://pypi.org/">Python Package Index</a></p>
-				</section>
-
-				<section>
-					<h2>General Purpose Input/Output</h2>
-					<img src="images/Display.png"/>
-				</section>
-
-				<section>
-					<h2>GPIO Pins (Layout)</h2>
-					<img src="images/Pins.png" height="500"/>
-					<img src="images/GPIOs.png" height="500"/>					
-				</section>
-
-				<section>
-					<h2>GPIO mit Python ansteuern</h2>
-					<ul>
-						<li>Es gibt zwei verschiedene Modi für die Identifizierung
-							<ol>
-								<li class="fragment highlight-current-green">Die BOARD-Methode verwendet die Nummern 1 bis 40 entsprechend dem Layout.</li>
-								<li class="fragment highlight-current-green">Die BCM-Methode bezeichnet die Pins entsprechend ihres Interface-Kanals (channel).</li>
-							</ol>
-						</li>
-						<li class="fragment highlight-current-green">Einige GPIO-Anschlüsse können mehrere Funktionen übernehmen (SPI, I2C, USB...)</li>
-						<li class="fragment highlight-current-green">Achtung: Ein GPIO-Ausgang darf mit maximale 16mA belastet werden.</li>
-						<li class="fragment highlight-current-green">Alles GPIOs funktionieren mit 3.3V</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>GPIO mit Python ansteuern 2</h2>
-					<ul>
-						<li>Die 'RPi'-Bibliothek erlaubt den Ansteuerung der GPIO-Anschlüsse</li>
-					</ul>
-					<pre><code class="py" data-trim data-line-numbers>
-						import RPi.GPIO as GPIO
-
-						GPIO.setmode(GPIO.BCM)
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Aufbau mit Breadboard</h2>
-					<img src="images/Verdrahtung1.png" height="500"/>
-				</section>
-
-				<section>
-					<h2>Aufbau mit Breadboard</h2>
-					<img src="images/Verdrahtung2.png" height="500"/>
-				</section>
-
-				<section>
-					<h2>Aufbau mit Breadboard</h2>
-					<img src="images/Verdrahtung3.png" height="500"/>
-				</section>
-
-				<section>
-					<h2>Blinkende Leuchtdiode</h2>					
-					<ul>
-						<li>LEDs können nur mit einem Vorwiderstand an den GPIOs angeschlossen werden. 
-						In dem Fall 150 Ohm.</li>
-						<li>Die Polarität muss beachtet werden. Der kurze Anschluss	kennzeichnet die 
-							Anode und muss mit der positiven Seite der Spannungsversorgung verbunden 
-							werden.	Der lange Anschluss ist die Kathode und gehört an die negative 
-							Seite (hier Ground GND).</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Blinkende Leuchtdiode</h2>
-					<img src="images/LED1.png" height="500"/>
-				</section>
-				<section>
-					<h2>Blinkende Leuchtdiode</h2>
-					<pre><code class="py" data-trim data-line-numbers>
-						import time
-						import RPi.GPIO as GPIO
-						
-						led_pin = 18
-						
-						GPIO.setmode(GPIO.BCM)
-						GPIO.setup(led_pin, GPIO.OUT)
-						
-						try:
-							while True:
-								GPIO.output(led_pin, GPIO.HIGH)
-								time.sleep(0.5)
-								GPIO.output(led_pin, GPIO.LOW)
-								time.sleep(0.5)
-						except KeyboardInterrupt:
-							pass
-						
-						GPIO.cleanup()
-					</code></pre>
+					<section>
+						<h3>Blinkende Leuchtdiode</h3>					
+						<ul>
+							<li>LEDs können nur mit einem Vorwiderstand an den GPIOs angeschlossen werden. 
+							In dem Fall 150 Ohm.</li>
+							<li>Die Polarität muss beachtet werden. Der kurze Anschluss	kennzeichnet die 
+								Anode und muss mit der positiven Seite der Spannungsversorgung verbunden 
+								werden.	Der lange Anschluss ist die Kathode und gehört an die negative 
+								Seite (hier Ground GND).</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Blinkende Leuchtdiode</h3>
+						<img src="images/LED1.png" height="500"/>
+					</section>
+					<section>
+						<h3>Blinkende Leuchtdiode</h3>
+						<pre><code class="py" data-trim data-line-numbers>
+							import time
+							import RPi.GPIO as GPIO
+							
+							led_pin = 18
+							
+							GPIO.setmode(GPIO.BCM)
+							GPIO.setup(led_pin, GPIO.OUT)
+							
+							try:
+								while True:
+									GPIO.output(led_pin, GPIO.HIGH)
+									time.sleep(0.5)
+									GPIO.output(led_pin, GPIO.LOW)
+									time.sleep(0.5)
+							except KeyboardInterrupt:
+								pass
+							
+							GPIO.cleanup()
+						</code></pre>
+					</section>
 				</section>
 
 				<!-- https://indibit.de/raspberry-pi-gpio-ausgaenge-schalten-eingaenge-lesen/ -->
 				<section>
-					<h2>Taster abfragen</h2>
-					<ul>
-						<li>Kann verwendet werden um den Zustand eines elektrischen Kontakts zu erfassen</li>
-						<li>z.B. Lichtschranken, Türkontakte, Taster, etc...</li>
-						<li>Pull-Up oder Pull-Down beachten <a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm">(Klick)</a></li>						
-						<li>Die Pull-Up / Pull-Down Widersände sind in der CPU bereits eingebaut und können über die Bibliothek
-							aktiviert werden.
-						</li>
-					</ul>
-				</section>
+					<section>
+						<h2>Taster abfragen</h2>
+						<ul>
+							<li>Kann verwendet werden um den Zustand eines elektrischen Kontakts zu erfassen</li>
+							<li>z.B. Lichtschranken, Türkontakte, Taster, etc...</li>
+							<li>Pull-Up oder Pull-Down beachten <a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm">(Klick)</a></li>						
+							<li>Die Pull-Up / Pull-Down Widersände sind in der CPU bereits eingebaut und können über die Bibliothek
+								aktiviert werden.
+							</li>
+						</ul>
+					</section>
 
-				<section>
-					<h2>Taster abfragen</h2>
-					<img src="images/Pullup.png" height="500"/>
-				</section>
+					<section>
+						<h3>Taster abfragen</h3>
+						<img src="images/Pullup.png" height="500"/>
+					</section>
 
-				<section>
-					<h2>Taster abfragen</h2>
-					<img src="images/Taster1.jpeg" height="500"/>
-				</section>
+					<section>
+						<h3>Taster abfragen</h3>
+						<img src="images/Taster1.jpeg" height="500"/>
+					</section>
 
-				<section>
-					<h2>Taster abfragen</h2>
-					<pre><code class="py" data-trim data-line-numbers>
-						import time
-						import RPi.GPIO as GPIO
-						
-						tast_pin = 17
-						
-						GPIO.setmode(GPIO.BCM)
-						GPIO.setup(tast_pin, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-						try:
-							while True:
-								time.sleep(0.5)
-								if GPIO.input(tast_pin) == GPIO.HIGH:
-									print "Taster (nicht) gedrückt"
-								else:
-									print "Taster (nicht) gedrückt"
+					<section>
+						<h3>Taster abfragen</h3>
+						<pre><code class="py" data-trim data-line-numbers>
+							import time
+							import RPi.GPIO as GPIO
 							
-						except KeyboardInterrupt:
-							pass
-						
-						GPIO.cleanup()
-					</code></pre>
-				</section>
+							tast_pin = 17
+							
+							GPIO.setmode(GPIO.BCM)
+							GPIO.setup(tast_pin, GPIO.IN, pull_up_down = GPIO.PUD_UP)
+							try:
+								while True:
+									time.sleep(0.5)
+									if GPIO.input(tast_pin) == GPIO.HIGH:
+										print "Taster (nicht) gedrückt"
+									else:
+										print "Taster (nicht) gedrückt"
+								
+							except KeyboardInterrupt:
+								pass
+							
+							GPIO.cleanup()
+						</code></pre>
+					</section>
 
+					<section>
+						<h3>Taster abfragen</h3>
+						<p>Aufgabe: Ändere das Programm so ab, dass nur die Ereignisse "Taste gedrückt" 
+							und "Taste losgelassen" ausgegeben werden.
+						</p>
+					</section>
+
+					<section>
+						<h3>Funktionen</h3>
+						<pre><code class="py" data-trim data-line-numbers>						
+							# Funktionsdefinition
+							def sekunden_alter(name, alter):
+								print(name, "ist", alter, "Jahre alt!")
+								sekunden = alter * 365 * 24 * 60 * 60
+								print(name, "ist an seinem Geburtstag", sekunden, "Sekunden alt")
+								print()
+							
+							# Funktionsaufrufe
+							sekunden_alter("Paul", 12)
+							sekunden_alter("Jonas", 15)
+							sekunden_alter("Herbert", 42)
+							sekunden_alter("Luise", 66)
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Taster abfragen</h3>
+						<pre><code class="py" data-trim data-line-numbers>
+							import time
+							import RPi.GPIO as GPIO
+							GPIO.setmode(GPIO.BOARD)
+							GPIO.setup(18, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+							
+							# Callback-Funktion
+							def ereignis(channel):
+								print("Taster gedrückt")
+														
+							tast_pin = 17
+							
+							GPIO.add_event_detect(tast_pin, GPIO.FALLING, callback = ereignis, bouncetime = 200)
+							
+							try:
+								while True:
+									time.sleep(0.5)
+							
+							except KeyboardInterrupt:
+								pass
+							
+							GPIO.cleanup()							
+						</code></pre>
+					</section>
+					<section>
+						<h3>Taster und LED kombinieren</h3>
+						<p>Aufgabe: Ändere das Programm so ab, dass die LED genau 3x blinkt wenn der Taster gedrückt wird.
+						</p>
+					</section>
+				</section>
 				<section>
-					<h2>Taster abfragen</h2>
-					<p>Aufgabe: Ändere das Programm so ab, dass nur die Ereignisse "Taste gedrückt" 
-						und "Taste losgelassen" ausgegeben werden.
-					</p>
+					<section>
+						<h2>Raspberry Pi im Netzwerk</h2>
+						<img src="images/network1.jpeg" height="500"/>
+					</section>
+					<section>
+						<h3>Netzwerkstruktur</h3>
+						<img src="images/netzwerk2.jpg" height="200"/>
+						<ul>
+							<li>Ende-zu-Ende-Kommunikation</li>
+							<li>Paketorientiert</li>
+							<li>Datenkanal zwischen zwei Teilnehmern</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Netzwerkstruktur</h3>
+						<img src="images/netzwerk3.jpg" height="600"/>
+					</section>
+
+					<section>
+						<h3>Client-Server-Architektur</h3>
+						<img src="images/netzwerk4.jpg" height="300"/>
+					</section>
+
+					<section>
+						<h3>Was sind Ports?</h3>
+						<ul>
+							<li>Ein Port ist ein "Teil" einer Adresse und umfasst den Wertebereich 0 bis 65535</li>
+							<li>Zuordnung von <b>Diensten</b> zu Port-Nummern.</li>
+							<li>Client und Server "binden" sich an jeweils einen Port, wenn eine Verbindung aufgebaut wird.</li>
+							<li>Ports 0 bis 1023: System Ports</li>
+							<li>Ports 1024 bis 49151: Registered Ports</li>
+							<li>Ports 49152 bis 65535: Dynamic Ports</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Netcat</h3>
+						<p>Server-Seite</p>
+						<pre><code class="bash">
+							netcat -l -p 50000
+						</code></pre></pre>
+						<p>Client-Seite</p>
+						<pre><code class="bash">
+							netcat X.X.X.X 50000
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Frage-Antwort-Spiel - Server</h3>
+						<pre><code class="py" data-trim data-line-numbers>						
+							import sys
+							import socket
+
+							sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+							sock.bind(("", 51000))
+							sock.listen(1)
+
+							while True:
+								print("Warte auf deinen Spieler ")
+								spieler, addr = sock.accept()
+								print("Spieler hat sich verbunden. Seine Adresse ist ", addr)
+								try:
+									while True:
+										print("Warte auf Frage...")
+										frage = spieler.recv(256)
+										if frage:
+											print("Emfangen: " + frage.decode())
+											antwort = input("Tippe die Antwort ein und dann ENTER: ")
+											spieler.sendall(antwort.encode())
+										else:
+											print("EOF")
+											break
+								finally:
+									spieler.close()
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Frage-Antwort-Spiel - Client</h3>
+						<pre><code class="py" data-trim data-line-numbers>						
+							import sys
+							import socket
+							import time
+							
+							spieler = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+							print("Verbinde zum Spieler ...")
+							spieler.connect(("10.2.15.154", 51000))
+							print("Verbunden")
+							
+							try:
+								while True:
+									frage = input("Tippe deine Frage ein und dann ENTER: ")
+									spieler.sendall(frage.encode())
+									print("Warte auf die Antwort")
+									antwort = spieler.recv(256)
+									print("Antwort: " + antwort.decode())
+							finally:
+								print("Cleanup")
+								sock.close()
+						</code></pre>
+					</section>
+
+
 				</section>
 
-
-				<!-- https://pimylifeup.com/raspberry-pi-gpio/ -->
+				
 			</div>
 		</div>
 
