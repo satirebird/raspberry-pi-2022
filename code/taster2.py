@@ -1,14 +1,13 @@
 import time
 import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(18, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-
-
-def ereignis(channel):
-    print "Taster gedrückt"
-
 
 tast_pin = 17
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(tast_pin, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+
+def ereignis(channel):
+    print("Taster gedrückt")
 
 GPIO.add_event_detect(tast_pin, GPIO.FALLING, callback = ereignis, bouncetime = 200)
 
