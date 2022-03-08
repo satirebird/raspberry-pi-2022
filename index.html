@@ -592,7 +592,74 @@
 
 
 				</section>
+				<section>
+					<section>
+						<h2>Abschlussprojekt</h2>
+						<p>
+							Ziel: Wir bauen ein Sensor, der in einem Winkel von 180 Grad
+							nach dem kleinsten Abstand zum Sensor bestimmt.
+						</p>
+						<p>Dazu befestigen wir auf einem Servomotor ein Ultraschallsensor. Damit kann der 
+							Ultraschallsensor um 180 Grad gedreht werden.
+						</p>
+						<p>
+							Es soll ein Programm geschrieben werden, dass die Umgebung abscannt und im Anschluss 
+							den Sensor auf das Ziel richtet.
+						</p>
+					</section>
+					<section>
+						<h2>Aufgaben / Funktionen</h2>
+						<ol>
+							<li>Ansteuerung Servomotor</li>
+							<li>Ansteuerung Ultraschallsensor</li>
+							<li>Algorithmus zum scannen und positionieren</li>
+						</ol>
+						<p>Bildet drei Gruppen, die jeweils ein Thema bearbeiten. Am Ende werden wir 
+							alles auf einem Raspberry Pi zusammenfügen.</p>
+					</section>
+					<section>
+						<h2>Grobstruktur / Zusammenarbeit</h2>
+						<pre><code class="py" data-trim data-line-numbers>						
+							def setze_position(winkel):
+							    print("Neuer Winkel: ", winkel)
 
+							def messe_abstand():
+								return 0.0
+
+							def ermittle_winkel():
+								return -1
+
+							def programm():
+								winkel = ermittle_winkel()
+								if winkel >= 0:
+									print("Kleinster Abstand gefunden bei:", winkel)
+									setze_position(winkel)        
+								else:
+									print("Nichts gefunden")
+
+							programm()
+						</code></pre>
+					</section>
+					<section>
+						<h2>(Modellbau-)Servos ansteuern</h2>
+					</section>
+					<section>
+						<img src="images/servo1.jpg" height="500"/>
+					</section>
+					<section>
+						<img src="images/servo2.jpg" height="500"/>
+					</section>
+					<section>
+						<img src="images/servo3.png" height="500"/>
+					</section>
+					<section>
+						<a href="https://dasraspberrypi.de/servo-himbeer-pi/">Anleitung</a>
+					</section>					
+					<section>
+						<h2>Ultraschallsensor</h2>
+						<a href="https://tutorials-raspberrypi.de/entfernung-messen-mit-ultraschallsensor-hc-sr04/">Anleitung</a>
+					</section>
+				</section>
 				
 			</div>
 		</div>
