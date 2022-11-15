@@ -195,19 +195,36 @@
 							<p>
 								Bedingungen können sein:
 							</p>
-							<ul>
+							<small><ul>
 								<li>Kleiner: a &lt; b</li>
 								<li>Größer: a &gt; b</li>
 								<li>Kleiner gleich: a &lt;= b</li>
 								<li>Größer gleich: a &gt;= b</li>
 								<li>Gleich a == b</li>
-							</ul>
+							</ul></small>
+					</section>
+
+					<section>
+						<h3>Syntax</h3>
+							<pre><code class="py" data-trim data-line-numbers>
+								if [Bedingung]:
+									[Anweisung1] #Innerhalb der Bedingung
+									[Anweisung2] #Innerhalb der Bedingung
+									...
+								[Anweisung3] #Gehört NICHT zur Bedingung
+							</code></pre>
+							<small>
+							<p>
+								Ein zusammenhängender Code-Block wird anhand der Einrückung identifiziert.
+							</p>
+							</small>
 					</section>
 
 					<section>
 						<h3>Verzweigungen - Beispiel</h3>
 							<pre><code class="py" data-trim data-line-numbers>
-								alter = int(input("Wie alt bist du? "))
+								alter = input("Wie alt bist du? ")
+								alter = int(alter)
 								if alter < 10:
 									print("Kind")
 								elif alter < 18:
@@ -215,6 +232,10 @@
 								else:
 									print("Erwachsen")
 							</code></pre>
+							<small>
+								<p>Aufgabe:</p>
+								<p>Erweitere das Beispiel so, dass auch "Rentner" ab eine Alter von 65 ausgegeben wird.</p>
+							</small>
 					</section>
 
 					<section>
@@ -225,6 +246,8 @@
 								...
 								break
 						</code></pre>
+					</section>
+					<section>
 						<p>Zahlenraten</p>
 						<pre><code class="py" data-trim data-line-numbers>
 							from random import randint
@@ -242,6 +265,11 @@
 
 							print("Richtig!")
 						</code></pre>
+						<small>
+							<p>Aufgabe für die Profis:</p>
+							<p>Wie kann das Programm geändert werden, so dass die Abfrage int(input(...)) nur 
+								einmal programmiert werden muss</p>
+						</small>
 					</section>
 
 					<section>
@@ -254,11 +282,69 @@
 						</code></pre>
 						<p>Beispiel Fakultät</p>
 						<pre><code class="py" data-trim data-line-numbers>
-							fak = 1
+							f = 1
 							for i in range(1,10):
-								fak = fak * i
-							print("Fakultät von:", i, "ist", fak)
+								f = f * i
+							
+							print("Fakultät von:", 9, "ist", f)
 						</code></pre>
+					</section>
+
+					<section>
+						<h3>Funktionen</h3>
+						<pre><code class="py" data-trim data-line-numbers>
+							f = 1
+							for i in range(1,10):
+								f = f * i
+							print("Fakultät von:", 9, "ist", f)
+
+							f = 1
+							for i in range(1,18):
+								f = f * i
+							print("Fakultät von:", 17, "ist", f)
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Funktionen (2)</h3>
+						<pre><code class="py" data-trim data-line-numbers>
+							def name(parameter, ...):
+								Anweisung
+								...
+								return Wert (optional)
+						</code></pre>
+						<p>Beispiel Fakultät</p>
+						<pre><code class="py" data-trim data-line-numbers>
+							def faku(inp):
+								f = 1
+								for i in range(1, inp + 1):
+									f = f * i
+								print("Fakultät von:", inp, "ist", f)	
+							
+							faku(9)
+							faku(17)
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Funktionen (3)</h3>
+						<p>Rückgabewerte</p>
+						<pre><code class="py" data-trim data-line-numbers>
+							def faku(inp):
+								f = 1
+								for i in range(1, inp + 1):
+									f = f * i
+								return f
+							
+							x = faku(9)
+							print("Fakultät von:", 9, "ist", x)
+							print("Fakultät von:", 13, "ist", faku(13))
+						</code></pre>
+						<small>
+							<p>Aufgabe:</p>
+							<p>Schreibe eine Funktion, dass die Fibonacci-Folge erzeugt und anzeigt. 
+								Die Länge der Folge soll mit einem Funktions-Parameter geändert werden können.</p>
+						</small>
 					</section>
 
 					<section>
@@ -432,24 +518,6 @@
 						<p>Aufgabe: Ändere das Programm so ab, dass nur die Ereignisse "Taste gedrückt" 
 							und "Taste losgelassen" ausgegeben werden.
 						</p>
-					</section>
-
-					<section>
-						<h3>Funktionen</h3>
-						<pre><code class="py" data-trim data-line-numbers>						
-							# Funktionsdefinition
-							def sekunden_alter(name, alter):
-								print(name, "ist", alter, "Jahre alt!")
-								sekunden = alter * 365 * 24 * 60 * 60
-								print(name, "ist an seinem Geburtstag", sekunden, "Sekunden alt")
-								print()
-							
-							# Funktionsaufrufe
-							sekunden_alter("Paul", 12)
-							sekunden_alter("Jonas", 15)
-							sekunden_alter("Herbert", 42)
-							sekunden_alter("Luise", 66)
-						</code></pre>
 					</section>
 
 					<section>
