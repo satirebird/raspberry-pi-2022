@@ -185,7 +185,7 @@
 								if [Bedingung]:
 									[Anweisung]
 									...
-								elif:
+								elif [Bedingung]:
 									[Anweisung]
 									...
 								else:
@@ -529,13 +529,14 @@
 							tast_pin = 17
 
 							GPIO.setmode(GPIO.BCM)
-							GPIO.setup(tast_pin, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+							GPIO.setup(tast_pin, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 							
 							# Callback-Funktion
 							def ereignis(channel):
 								print("Taster gedrückt")
 																					
-							GPIO.add_event_detect(tast_pin, GPIO.FALLING, callback = ereignis, bouncetime = 200)
+							GPIO.add_event_detect(tast_pin, GPIO.FALLING, 
+												  callback = ereignis, bouncetime = 200)
 							
 							try:
 								while True:
@@ -681,7 +682,7 @@
 						<h2>Abschlussprojekt</h2>
 						<p>
 							Ziel: Wir bauen ein Sensor, der in einem Winkel von 180 Grad
-							nach dem kleinsten Abstand zum Sensor bestimmt.
+							den kleinsten Abstand zum Sensor bestimmt.
 						</p>
 						<p>Dazu befestigen wir auf einem Servomotor ein Ultraschallsensor. Damit kann der 
 							Ultraschallsensor um 180 Grad gedreht werden.
