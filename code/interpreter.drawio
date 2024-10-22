@@ -1,0 +1,39 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0" version="24.8.1">
+  <diagram name="Seite-1" id="kwnuvQKQoLL2j6WmcA50">
+    <mxGraphModel dx="2074" dy="1310" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pj36KuEjwh2B7K8vbpFQ-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pj36KuEjwh2B7K8vbpFQ-1" target="pj36KuEjwh2B7K8vbpFQ-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pj36KuEjwh2B7K8vbpFQ-1" value="&lt;div&gt;Source Code&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;a=50;&lt;/div&gt;&lt;div&gt;if (a&amp;lt;25){...}&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="270" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="pj36KuEjwh2B7K8vbpFQ-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pj36KuEjwh2B7K8vbpFQ-2" target="pj36KuEjwh2B7K8vbpFQ-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pj36KuEjwh2B7K8vbpFQ-2" value="&lt;div&gt;Syntax / Semantik&lt;/div&gt;&lt;div&gt;Analyse&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="270" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="pj36KuEjwh2B7K8vbpFQ-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pj36KuEjwh2B7K8vbpFQ-3" target="pj36KuEjwh2B7K8vbpFQ-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pj36KuEjwh2B7K8vbpFQ-3" value="&lt;div&gt;Machine Code&lt;/div&gt;&lt;div&gt;Generator&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;mov R1,R8(ebp)&lt;/div&gt;&lt;div&gt;inc R1&lt;/div&gt;&lt;div&gt;mov R4, R1&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="270" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="pj36KuEjwh2B7K8vbpFQ-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pj36KuEjwh2B7K8vbpFQ-4" target="pj36KuEjwh2B7K8vbpFQ-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="410" />
+              <mxPoint x="100" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pj36KuEjwh2B7K8vbpFQ-4" value="Sofortige Ausführung&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&quot;a=32&quot;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="270" width="120" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
