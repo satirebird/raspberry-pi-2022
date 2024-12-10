@@ -677,6 +677,118 @@
 
 				<section>
 					<section>
+						<h2>EMail und Co</h2>
+						<h3>Themen</h3>
+						<ul>
+							<li>Aufbau von E-Mails</li>
+							<li>MUA, MSA, MTA, MDA und MRA</li>
+							<li>SMTP Protokoll</li>
+							<li>EMail Client einrichten</li>
+							<li>Python MUA</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Aufbau einer E-Mail</h2>
+						<pre><code class="txt" data-trim data-line-numbers>
+							Message-ID: <68ce9779939fa97b7f1c4e1dfccd06017f4e3b51.camel@web.de>
+							Subject: Testmail
+							From: Sven Krauss <sven.krauss@web.de>
+							To: sven.krauss@posteo.de
+							Date: Tue, 10 Dec 2024 14:47:33 +0100
+							Content-Type: text/plain
+							Content-Transfer-Encoding: 7bit
+								
+							Einfacher Test
+						</code></pre>
+					</section>
+					<section>
+						<h2>Ganz viele MMMMM</h2>
+						<img src="images/mail1.jpg" height="600"/>
+						<small><p>Quelle: <a href="https://oxilor.com/blog/how-does-email-work">How does email work</p></small>
+					</section>
+					<section>
+						<h3>Ganz viele MMMMM</h3>
+						<table>
+							<tr><th>Abk.</th><th>Beschreibung</th></tr>
+							<tr><td>MUA</td><td><b>Mail User Agent. </b></td></tr>
+							<tr><td>MSA</td><td><b>Mail Submission Agent. </b></td></tr>
+							<tr><td>MTA</td><td><b>Mail Transfer Agent. </b></td></tr>
+							<tr><td>MDA</td><td><b>Mail Delivery Agent. </b></td></tr>
+							<tr><td>MRA</td><td><b>Mail Retrieval Agent. </b></td></tr>
+						</table>
+					</section>
+					<section>
+						<h3>EMail Client einrichten</h3>
+						<pre><code class="bash">
+							sudo apt update
+							sudo apt install geary
+						</code></pre>
+						<p>Starte Geary und richte dein Account ein.</p>
+					</section>
+
+					<section>
+						<h3>Nachricht erstellen (sendmail.py)</h3>
+						<pre><code class="py" data-trim data-line-numbers>
+							from email.message import EmailMessage
+
+							def create_msg(from_addr, to_addr, inhalt):
+								msg = EmailMessage()
+								msg.set_content(inhalt)
+							
+								msg['Subject'] = "Mein Betreff"
+								msg['From'] = from_addr
+								msg['To'] = to_addr
+								return msg
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Versenden mit SMTP (sendmail.py)</h3>
+						<pre><code class="py" data-trim data-line-numbers>
+							import smtplib, ssl
+							
+							def send_msg(from_addr, msg):
+							
+								server = "w00962be.kasserver.com"
+								port = 465
+							
+								# Login Passwort abfragen
+								prompt = "Login für {}: ".format(from_addr)
+								passwort = input(prompt)
+							
+								# Sichere Verbindung aufbauen, einloggen und senden
+								ssl_ctx = ssl.create_default_context()
+								s = smtplib.SMTP_SSL(server, port, context=ssl_ctx)
+								s.login(from_addr, passwort)
+								s.send_message(msg)
+								s.quit()
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Eigene Bibliothek verwenden</h3>
+						<pre><code class="py" data-trim data-line-numbers>
+							import sendmail
+
+							inhalt = "Langer langer text"
+							sender = "tn1@phaenovum.de"
+							empfänger = "tn2@phaenovum.de"
+							
+							nachricht = sendmail.create_msg(sender, empfänger, inhalt)
+							sendmail.send_msg(sender, nachricht)
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Aufgabe</h3>
+						<p>(1) Erstelle ein Programm, mit einem Tastendruck eine E-Mail versendet.</p>
+						<p>(2) Binde den Abstandssensor ein und schicke eine Mail mit dem gemessenen Wert.</p>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
 						<h2>Sonic Pi</h2>
 						<p>
 							Installation im Terminal:
