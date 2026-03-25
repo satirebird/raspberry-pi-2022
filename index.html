@@ -791,88 +791,220 @@
 				<section>
 					<section>
 						<h2>Sonic Pi</h2>
+						<p><a href="https://sonic-pi.net/files/releases/v4.6.0/sonic-pi_4.6.0_2_trixie.arm64.deb">Download</a></p>
 						<p>
 							Installation im Terminal:
-							<pre><code class="bash">
-								sudo apt install sonic-pi
+							<pre><code class="bash" data-trim>
+								sudo apt update
+								sudo apt full-upgrade
+								cd Downloads
+								sudo apt install ./sonic-pi_4.6.0_2_trixie.arm64.deb
 							</code></pre>
 						</p>
 						
-						<p><a href="https://sonic-pi.net/tutorial.html">Anleitung</a></p>
+						<p><a href="https://tillylab.github.io/sonic-pi-tutorial/">Anleitung</a></p>
 						<small>
 						<p><a href="https://youtu.be/LaKT3pli5EQ">Live Coding (Youtube)</a></p>
 						<p><a href="https://youtu.be/rnCE7hxNGXw">Live Coding von Sam Aaron (Youtube)</a></p>
 						</small>
 					</section>
+					<section>
+						<h2>Erste Schritte</h2>
+						<p>
+							<pre><code data-trim>
+								play 60
+							</code></pre>							
+						</p>
+					</section>
+					<section>
+						<h2>Erste Schritte (2)</h2>
+						<p>
+							<pre><code data-trim>
+								play 60
+								play 67
+								play 69
+							</code></pre>
+						</p>
+					</section>
+					<section>
+						<h2>Erste Schritte (3)</h2>
+						<p>
+							<pre><code data-trim>
+								play 60
+								sleep 0.5
+								play 62
+								sleep 0.5
+								play 64
+								sleep 0.5
+								play 60
+								sleep 0.5
+							</code></pre>
+						</p>
+					</section>
+					<section>
+						<h2>Erste Schritte (4)</h2>
+						<p>Wer kenn dieses Lied?</p>
+						<p>
+							<pre><code data-trim>
+								2.times do
+									play 60
+									sleep 0.5
+									play 62
+									sleep 0.5
+									play 64
+									sleep 0.5
+									play 60
+									sleep 0.5
+								end
+							</code></pre>
+						</p>
+					</section>
+					<section>
+						<h2>MIDI</h2>
+						<img src="images/the-midi-note-chart.png"/>
+					</section>
+					<section>
+						<h2>Samples</h2>
+						<p>
+							<pre><code data-trim>
+								sample :loop_amen, rate: 1, amp: 1.0
+							</code></pre>
+						</p>
+					</section>
+					<section>
+						<h2>Live-Loops</h2>
+						<p>
+							<pre><code data-trim>
+								live_loop :flibble do
+									sample :bd_haus, rate: 1
+									sleep 0.5
+								end
+							</code></pre>
+						</p>
+					</section>
+					<section>
+						<h2>Live-Loops (2)</h2>
+						<p>
+							<pre><code data-trim>
+								live_loop :flibble do
+									sample :bd_haus, rate: 1
+									sleep 0.25
+									sample :drum_cymbal_closed
+									sleep 0.25
+								end
+							</code></pre>
+						</p>
+					</section>
+					<section>
+						<h2>Live-Loops (3)</h2>
+						<p>
+							<pre><code data-trim>
+								live_loop :flibble do
+									sample :bd_haus, rate: 1
+									sleep 0.25
+									sample :drum_cymbal_closed
+									sleep 0.25
+								end
+
+								live_loop :ambi do
+									sample :ambi_choir, rate: 0.3
+									sleep 2
+									sample :ambi_piano, rate: 0.8
+									sleep 2
+								end
+							</code></pre>
+						</p>
+					</section>
+					<section>
+						<h2>Effekte</h2>
+						<p>
+							<pre><code data-trim>
+							with_fx :echo, mix: 0.6, phase: 0.25 do
+								sample :guit_em9, rate: 0.5
+							end
+							</code></pre>
+						</p>
+						<p><strong>Weitere Effekte:</strong></p>
+						<small>
+							<ul>
+								<li><code>with_fx :reverb, mix: 0.5 do ... end</code></li>
+								<li><code>with_fx :distortion, mix: 0.7 do ... end</code></li>
+								<li><code>with_fx :slicer, phase: 0.25 do ... end</code></li>
+								<li><code>with_fx :wobble, phase: 0.5 do ... end</code></li>
+							</ul>
+						</small>
+					</section>
+					<section>
+						<h2>Synthesizer</h2>
+						<p><pre><code data-trim>
+								live_loop :ralf do
+									synth :tb303, note: :e1, release: 4, cutoff: 120
+									sleep 4
+								end
+						</code></pre></p>
+						<p><strong>Weitere Synthesizer:</strong></p>
+						<small>
+							<ul>
+								<li>fm</li>
+								<li>mod_pulse</li>
+								<li>prophet</li>
+								<li>supersaw</li>
+							</ul>
+						</small>
+					</section>
+
+					<section>
+						<h2>Beispiele</h2>
+						<p><pre><code data-trim>
+							notes = (ring :E4, :Fs4, :B4, :Cs5, :D5, :Fs4,
+									:E4, :Cs5, :B4, :Fs4, :D5, :Cs5)
+							
+							use_synth :supersaw
+							
+							live_loop :slow do
+								play notes.tick, release: 0.1
+								sleep 0.2
+							end
+							
+							live_loop :faster do
+								play notes.tick, release: 0.1
+								sleep 0.198
+							end
+						</code></pre></p>
+					</section>
+					<section>
+						<h2>Beispiele (2)</h2>
+						<p><pre><code data-trim>
+						use_debug false
+						bizet_bass = (ring :d, :r, :r, :a, :f5, :r, :a, :r)
+						#bizet_bass = (ring :d, :r, :r, :Bb, :g5, :r, :Bb, :r)
+						with_fx :reverb, room: 1, mix: 0.3 do
+							live_loop :bizet do
+								with_fx :slicer, phase: 0.125 do
+									synth :blade, note: :d4, release: 8,
+										cutoff: 100, amp: 1.5
+								end
+								16.times do
+									tick
+									play bizet_bass.look, release: 0.1
+									play bizet_bass.look - 12, release: 0.3
+									sleep 0.125
+								end
+							end
+						end
+						live_loop :ind do
+							sample :loop_industrial, beat_stretch: 1, 
+									cutoff: 100, rate: 1
+							sleep 1
+						end
+						live_loop :drums do
+							sample :bd_haus, cutoff: 110
+							synth :beep, note: 49, attack: 0, release: 0.1
+							sleep 0.5
+						end
+						</code></pre></p>
+					</section>
 				</section>
-
-				<section>
-					<section>
-						<h2>Abschlussprojekt</h2>
-						<p>
-							Ziel: Wir bauen ein Sensor, der in einem Winkel von 180 Grad
-							den kleinsten Abstand zum Sensor bestimmt.
-						</p>
-						<p>Dazu befestigen wir auf einem Servomotor ein Ultraschallsensor. Damit kann der 
-							Ultraschallsensor um 180 Grad gedreht werden.
-						</p>
-						<p>
-							Es soll ein Programm geschrieben werden, dass die Umgebung abscannt und im Anschluss 
-							den Sensor auf das Ziel richtet.
-						</p>
-					</section>
-					<section>
-						<h2>Aufgaben / Funktionen</h2>
-						<ol>
-							<li>Ansteuerung Servomotor</li>
-							<li>Ansteuerung Ultraschallsensor</li>
-							<li>Algorithmus zum scannen und positionieren</li>
-						</ol>
-						<p>Bildet drei Gruppen, die jeweils ein Thema bearbeiten. Am Ende werden wir 
-							alles auf einem Raspberry Pi zusammenfügen.</p>
-					</section>
-					<section>
-						<h2>Grobstruktur / Zusammenarbeit</h2>
-						<pre><code class="py" data-trim data-line-numbers>						
-							def setze_position(winkel):
-							    print("Neuer Winkel: ", winkel)
-
-							def messe_abstand():
-								return 0.0
-
-							def ermittle_winkel():
-								return -1
-
-							def programm():
-								winkel = ermittle_winkel()
-								if winkel >= 0:
-									print("Kleinster Abstand gefunden bei:", winkel)
-									setze_position(winkel)        
-								else:
-									print("Nichts gefunden")
-
-							programm()
-						</code></pre>
-					</section>
-					<section>
-						<h2>(Modellbau-)Servos ansteuern</h2>
-					</section>
-					<section>						
-						<p><img src="images/servo1.jpg" height="500"/></p>
-					</section>
-					<section>
-						<p><img src="images/servo2.jpg" height="500"/></p>
-					</section>
-					<section>
-						<p><img src="images/servo3.png" height="500"/></p>
-						<p><a href="https://dasraspberrypi.de/servo-himbeer-pi/">Anleitung Ansteuerung</a></p>
-					</section>
-					<section>
-						<h2>Ultraschallsensor HC-SR04</h2>						
-						<p><a href="https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf">Funktionsweise</a></p>
-						<p><a href="https://tutorials-raspberrypi.de/entfernung-messen-mit-ultraschallsensor-hc-sr04/">Anleitung</a></p>
-					</section>
-				</section>				
 			</div>
 		</div>
 
